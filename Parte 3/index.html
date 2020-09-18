@@ -29,8 +29,18 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 **/
 
-// CREA TU FUNCION challenge1 aqui 
+// CREA TU FUNCION challenge1 aqui
 
+function challenge1(){
+    var ans = prompt("Cuantos botones necesitas?");
+    
+    for(var i = 0; i < ans; i++){
+        var div = document.getElementById("dummy");
+        var newButton = document.createElement("button");
+      newButton.textContent = nombres[i];
+        div.appendChild(newButton);
+    }
+}
 
 
 // ************** PARTE 2    **************
@@ -41,7 +51,12 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 **/
 
 // CREA TU FUNCION challenge2 2 aquí.
+function challenge2(){
+  for (var i= 0; i < nombres.length; i++){
+    console.log(nombres[i].toUpperCase());
+  }
 
+}
 
 
 // ************** PARTE 3    **************
@@ -68,7 +83,41 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+//parte A y Bonus
+const Dog = {
+  Nombre: "nombre",
+  Raza: "raza", 
+  Color: "color",
+  printInfo: function() {
+    console.log(`Nombre:  ${this.Nombre} , Color: ${this.Color} , Raza: ${this.Raza}`);
+  }
+};
 
+//parte B
+ const fido = Object.create(Dog); 
+  fido.Nombre = "Fido"; 
+  fido.Raza = "Pug";
+  fido.Color = "negro"; 
+  
+  const puppy = Object.create(Dog); 
+  puppy.Nombre = "puppy"; 
+  puppy.Raza = "golden retriever";
+  puppy.Color = "gold"; 
+  
+  const zack = Object.create(Dog); 
+  zack.Nombre = "zack"; 
+  zack.Raza = "husky";
+  zack.Color = "negro"; 
+
+   function  challenge3(){
+    console.log(fido); 
+    console.log(puppy); 
+    console.log(zack); 
+    
+  }
+
+  //bonus 
+  fido.printInfo();
 
 
 
@@ -80,7 +129,7 @@ Invoca la función para validar su funcionalidad.
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
